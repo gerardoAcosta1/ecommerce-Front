@@ -1,0 +1,150 @@
+.main__cart {
+
+    width: 330px;
+    height: 90%;
+
+    position: absolute;
+    position: fixed;
+
+    z-index: 99;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+    margin-top: 90px;
+
+    margin: 0;
+    right: 0;
+    top: 60px;
+    padding: 0;
+
+    border: 1px solid rgba(185, 182, 182, 0.646);
+    box-shadow: -2px 2px 0px rgba(128, 128, 128, 0.090);
+
+    transition: .3s;
+
+    background-color: white;
+}
+
+.main__cart__title {
+    padding: 12px;
+}
+
+.content__cart {
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: scroll;
+    height: 70%;
+    overscroll-behavior: contain;
+
+    position: relative;
+}
+
+.content__cart::-webkit-scrollbar {
+    
+    width: 7px;
+
+
+}
+
+.content__cart::-webkit-scrollbar-track-piece:start {
+
+    margin-top: 50px;
+
+}
+
+.content__cart::-webkit-scrollbar-track-piece:end {
+
+    margin-bottom: 30px;
+    height: 5px;
+}
+
+.content__cart::-webkit-scrollbar-track-piece {
+
+    margin-bottom: 30px;
+    height: 5px;
+}
+
+.content__cart::-webkit-scrollbar-track {
+
+    background: rgb(255, 253, 253);
+
+}
+
+.content__cart::-webkit-scrollbar-thumb {
+    background-color: rgb(14, 14, 14);
+    margin-top: 10px;
+    border-radius: 20px;
+
+    border: 1px solid rgb(137, 133, 124);
+
+}
+
+.container__button__buy {
+
+
+    width: 80%;
+    height: 80px;
+    display: flex;
+
+
+    flex-direction: column;
+    justify-content: end;
+
+
+    padding-right: 3%;
+    margin-left: 10%;
+
+    position: relative;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+.total-title-buy {
+
+    text-align: start;
+
+    color: rgba(128, 128, 128, 0.437);
+}
+
+.total-price {
+    text-align: end;
+}
+
+.price__buy {
+
+    margin-bottom: 3em;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 50px;
+
+}
+
+.button__buy {
+
+    width: 100%;
+    height: 40px;
+
+    margin: 0%;
+    padding: 0;
+
+    margin-left: 0;
+    position: absolute;
+    border: none;
+
+    color: white;
+    background-color: #f85555;
+}
+
+.hiden {
+
+    transform: translateX(+120%);
+}

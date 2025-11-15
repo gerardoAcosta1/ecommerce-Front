@@ -1,0 +1,224 @@
+.container__aside__main {
+
+    width: 400px;
+    height: 500px;
+
+    margin-top: 33px;
+
+    background-color: rgb(255, 255, 255);
+
+    margin-left: 30px;
+
+
+    position: relative;
+
+
+}
+
+.container__aside {
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.container__title__price {
+
+    width: 100%;
+
+    margin-top: 10%;
+
+    display: flex;
+    overflow: hidden;
+
+
+    transition-duration: 1s;
+
+}
+
+.title__header-aside {
+
+    width: 100%;
+
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.icono {
+
+
+    text-align: end;
+
+    cursor: pointer;
+
+    padding: 0 10px;
+
+    transform: rotate(90deg);
+
+    transition: 1s;
+}
+
+.rotate {
+
+    transform: rotate(-90deg);
+
+}
+
+
+.container__form {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 10px;
+  
+}
+
+.container__from {
+
+    align-items: center;
+    display: flex;
+
+    padding: 0 10px;
+
+    margin-bottom: 10px;
+}
+
+label {
+
+    width: 20%;
+
+    display: block;
+}
+
+.container__to {
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+
+    padding: 10px;
+
+}
+
+.input__price {
+
+    width: 80%;
+
+    height: 30px;
+
+    display: inline-block;
+
+    border: none;
+
+    border: 1px solid rgba(70, 72, 73, 0.392);
+
+}
+
+.button__search__container{
+
+    display: flex;
+    justify-content: end;
+}
+.aside__search-btn{
+
+    border: none;
+
+    display: block;
+
+     width: 7em;
+     
+    padding: 8px 15px;
+    border-radius: 5px;
+
+    font-size: 1rem;
+
+    color: white;
+    background-color: #f85555;
+
+    margin-right: 10px;
+  
+}
+.translate__price {
+
+    transition: all 1s;
+
+    transform: translateY(-100%);
+
+}
+
+.title__header-aside-2 {
+
+    width: 100%;
+
+    padding: 0 10px;
+
+}
+
+.body__aside {
+
+    height: 137px;
+
+    transition: all 1s;
+
+    background-color: white;
+
+}
+
+.container__buttons {
+
+    overflow: hidden;
+
+    padding: 10px 10px;
+
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+.container__category {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    transition: all .7s;
+}
+
+.button__category {
+
+    width: max-content;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight:600;
+
+    color: rgb(110, 103, 103);
+
+    background-color: white;
+}
+
+
+.translate__category {
+
+    transition: all .7s;
+
+    transform: translateY(-105%);
+
+}
+
+@media screen and (max-width: 992px) {
+
+    .container__aside__main {
+
+        transform: translateX(-120%);
+        position: absolute;
+    }
+
+}

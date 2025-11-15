@@ -1,0 +1,229 @@
+.aside__movil-main {
+    width: 330px;
+    height: 90%;
+
+    position: absolute;
+    position: fixed;
+
+    z-index: 99;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+
+    margin: 0;
+    right: 0;
+    top: 60px;
+    padding: 0;
+
+    border: 1px solid rgba(185, 182, 182, 0.646);
+    box-shadow: -2px 2px 0px rgba(128, 128, 128, 0.090);
+
+    transition: .3s;
+
+    background-color: white;
+
+}
+
+.container__aside {
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.container__title__price {
+
+    width: 100%;
+
+    margin-top: 10%;
+
+    display: flex;
+    overflow: hidden;
+
+
+    transition-duration: 1s;
+
+}
+
+.title__header-aside {
+
+    width: 100%;
+
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.icono {
+
+
+    text-align: end;
+
+    cursor: pointer;
+
+    padding: 0 10px;
+
+    transform: rotate(90deg);
+
+    transition: 1s;
+}
+
+.rotate {
+
+    transform: rotate(-90deg);
+
+}
+
+
+
+.container__form {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 10px;
+
+}
+
+.container__from {
+
+    align-items: center;
+    display: flex;
+
+    padding: 0 10px;
+
+    margin-bottom: 10px;
+}
+
+label {
+
+    width: 20%;
+
+    display: block;
+}
+
+.container__to {
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+
+    padding: 10px;
+
+}
+
+.input__price {
+
+    width: 80%;
+
+    height: 30px;
+
+    display: inline-block;
+
+}
+
+.button__search__container {
+    display: flex;
+    justify-content: end;
+}
+
+.aside__search-btn {
+
+    border: none;
+
+    display: block;
+
+    width: 7em;
+
+    padding: 8px 15px;
+    border-radius: 5px;
+
+    margin-right: 10px;
+
+    font-size: 1rem;
+
+    color: white;
+    background-color: #f85555;
+
+}
+
+.translate__price {
+
+    transition: all 3s;
+
+    transform: translateY(-100%);
+
+}
+
+.title__header-aside-2 {
+
+    width: 100%;
+
+    padding: 0 10px;
+
+}
+
+.body__aside {
+
+    height: 134px;
+
+    transition: all 1s;
+    background-color: white;
+
+}
+
+.container__buttons {
+
+    overflow: hidden;
+
+    padding: 9px 10px;
+    background-color: white;
+}
+
+.container__category {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    margin-left: .5em;
+    transition: all 1s;
+}
+
+.button__category {
+
+    width: max-content;
+
+    border: none;
+
+    cursor: pointer;
+
+    background-color: white;
+}
+
+
+.translate__category {
+
+    transition: all 1s;
+
+    transform: translateY(-105%);
+
+}
+
+.hiden {
+    transform: translateX(+120%);
+}
+
+@media screen and (min-width: 992px) {
+
+    .aside__movil-main {
+
+        transform: translateX(+100%);
+        position: absolute;
+    }
+
+}

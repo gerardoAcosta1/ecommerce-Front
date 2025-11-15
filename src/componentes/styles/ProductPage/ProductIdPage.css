@@ -1,0 +1,14 @@
+.main__product{
+    margin-top: 80px;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+@media (min-width: 768px){
+    .container__section1 {
+        display: flex;
+    }
+
+}
+

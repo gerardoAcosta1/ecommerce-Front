@@ -1,0 +1,164 @@
+.main__info{
+
+    width: 50%;
+
+    display: flex;
+    padding: 20px;
+    
+}
+.article__info{
+    width: 100%;
+    max-width: 100%;
+    min-width: 40%;
+
+    
+}
+.marca__info{
+
+    font-weight: 400;
+
+    color: #c7c7c7;
+    
+}
+.title__info{
+
+    font-size: 25px;
+    padding-left: .5em;
+    margin-top: 2%;
+}
+.container__3-elements{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.description__info{
+
+    width: 100%;
+    font-size: 17px;
+    color: #524e4e;
+    line-height: 25px;
+}
+
+.container__price-quantity{
+
+    display: flex;
+    
+}
+.price__product{
+
+   margin-bottom: 10%;
+   margin-top: 5%;
+}
+.title-price__product{
+    
+    font-weight: 500;
+    color: #c7c7c7;
+
+    margin-bottom: 15%;
+}
+.price{
+
+    font-weight: 700;
+    font-size: 19px;
+
+   margin-left: 5%;
+    padding: 5%;
+
+    color: rgb(68, 67, 67);
+}
+.quantity{
+
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.quantity__title{
+
+    font-weight: 200;
+    color: #b4b1b1;
+}
+.buttons__main{
+
+    margin-top: .8em;
+
+    display: flex;
+}
+.button1__main{
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border: none;
+    border: 1px solid rgba(180, 175, 175, 0.692);
+
+    background-color: white;
+}
+.counter__main{
+
+ 
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px solid rgba(180, 175, 175, 0.692);
+}
+.button2__main{
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border: none;
+    border: 1px solid rgba(180, 175, 175, 0.692);
+
+    background-color: white;
+}
+.button-cart{
+    width: 100%;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+    padding: 15px;
+
+    cursor: pointer;
+
+    border: none;
+
+    color: white;
+    background-color: #f85555;
+}
+@media (max-width: 768px){
+    .main__info{
+        width: 100%;
+    }
+    .container__3-elements {
+        width: 100%;
+        flex-direction: column;
+    }
+    .container__2-elements{
+      display: flex;
+      flex-direction: column;
+        
+    }
+
+}
+@media (max-width: 390px){
+    .main__info {
+        width: 100%;
+        
+    }
+    .quantity{
+
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+
+}
