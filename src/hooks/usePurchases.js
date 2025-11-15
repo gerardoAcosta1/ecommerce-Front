@@ -8,7 +8,7 @@ import { useState } from "react";
 const usePurchases = () => {
     const [purchases, setPurchases] = useState()
 
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
+    const url = '/api/v1/purchases'
 
     const dispatch = useDispatch()
 
@@ -31,4 +31,4 @@ const usePurchases = () => {
     return {makePurchase, getAllPurchases, purchases}
 }
 
-export default usePurchases
+export default usePurchases 

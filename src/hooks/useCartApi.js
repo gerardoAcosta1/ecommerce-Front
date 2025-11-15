@@ -4,7 +4,7 @@ import getConfigToken from "../utils/getConfigToken"
 import axios from "axios"
 const useCartApi = () => {
 const dispatch = useDispatch()
-    const baseUrl = 'https://mi-tienda-backend-ewfh.onrender.com/api/v1'
+    const baseUrl = '/api/v1'
 
     //POST
 

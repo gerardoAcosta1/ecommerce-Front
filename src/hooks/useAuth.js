@@ -6,7 +6,7 @@ const useAuth = () => {
     const navigate = useNavigate()
     const createUser = (data, navigate) => {
 
-        const url = 'https://mi-tienda-backend-ewfh.onrender.com/api/v1/users'
+        const url = '/api/v1/users'
         axios.post(url, data)
         .then(res => {
             console.log(res.data)
@@ -16,7 +16,7 @@ const useAuth = () => {
     }
 
     const loginUser = data => {
-        const url = 'https://mi-tienda-backend-ewfh.onrender.com/api/v1/users/login'
+        const url = '/api/v1/users/login'
         axios.post(url, data)
         .then(res => {
             console.log(res.data)

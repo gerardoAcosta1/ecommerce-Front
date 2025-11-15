@@ -7,7 +7,7 @@
 # Esto soluciona el error 401 Unauthorized
 [[redirects]]
   from = "/api/*"
-  to = "https://mi-tienda-backend-ewft.onrender.com/api/:splat"
+  to = "https://mi-tienda-backend-ewfh.onrender.com/api/:splat"
   status = 200
   force = true
 
@@ -15,6 +15,6 @@
 # Esto soluciona el error 404 Not Found de las imágenes
 [[redirects]]
   from = "/images/*"
-  to = "https://mi-tienda-backend-ewft.onrender.com/images/:splat"
+  to = "https://mi-tienda-backend-ewfh.onrender.com/images/:splat"
   status = 200
   force = true
