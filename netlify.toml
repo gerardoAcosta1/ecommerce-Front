@@ -9,3 +9,22 @@
   to = "https://mi-tienda-backend-ewft.onrender.com/api/:splat"
   status = 200
   force = true
+
+
+  # Netlify.toml
+
+# 1. Redirección para todas las peticiones de la API
+# Esto soluciona el error 401 Unauthorized
+[[redirects]]
+  from = "/api/*"
+  to = "https://mi-tienda-backend-ewft.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# 2. Redirección para las imágenes estáticas
+# Esto soluciona el error 404 Not Found de las imágenes
+[[redirects]]
+  from = "/images/*"
+  to = "https://mi-tienda-backend-ewft.onrender.com/images/:splat"
+  status = 200
+  force = true
