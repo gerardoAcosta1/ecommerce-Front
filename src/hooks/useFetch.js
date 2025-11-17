@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 const useFetch = () => {
 
-    const baseUrl = '/api/v1'    
+    const baseUrl = 'https://mi-tienda-backend-ewfh.onrender.com/api/v1'    
     const [infoApi, setInfoApi] = useState()
 
 

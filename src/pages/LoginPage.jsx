@@ -12,6 +12,7 @@ const LoginPage = () => {
 
   const { loginUser } = useAuth()
   const navigate = useNavigate()
+
   const submit = data => {
     loginUser(data, navigate)
     reset({
@@ -38,8 +39,8 @@ const LoginPage = () => {
           <div className="container__test-area">
             <h4 className="test">Test data</h4>
             <ul className="container__dates">
-              <li className="email__test">jhon@gmail.com</li>
-              <li className="password__test">123</li>
+              <li className="email__test">gerardo@gmail.com</li>
+              <li className="password__test">123456</li>
             </ul>
           </div>
           < form onSubmit={(handleSubmit(submit))}>
@@ -72,7 +73,7 @@ const LoginPage = () => {
        
         
       </div>
-
+          
     </div>
   
 
