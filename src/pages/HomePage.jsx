@@ -8,13 +8,15 @@ import { getCartThunk } from "../store/slices/cart.slice"
 import useFilterItems from "../utils/useFilterItems"
 import { useEffect } from "react"
 import { getAllProductsThunk } from "../store/slices/products.slice"
+import useAuth from '../hooks/useAuth' // 🟢 Importación necesaria para el login automático
 
 
 const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
     const dispatch = useDispatch()
+    const { loginUser } = useAuth(); // 🟢 Inicializa el hook para acceder a loginUser
     
-    // 🟢 LÍNEA 20: AQUÍ ESTÁ LA LÍNEA QUE OBTIENE LOS PRODUCTOS DE REDUX!!!!!!
+    // 🟢 Obtiene el estado 'products' de Redux
     const products = useSelector(reducer => reducer.products) 
     
     // URL BASE DE TU BACKEND EN RENDER (Keep-Alive)
@@ -22,15 +24,31 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
 
     useEffect(()=>{
-        // 1. Cargar datos iniciales
+        
+        // ===================================================
+        // 🟢 LÓGICA DE LOGIN AUTOMÁTICO PARA PRUEBAS
+        // ===================================================
+        const TEST_CREDENTIALS = {
+            email: 'gerardo@gmail.com', 
+            password: '123456' 
+        };
+        
+        //Ejecuta la función de login al cargar. Esto setea el token en localStorage.
+        loginUser(TEST_CREDENTIALS);
+        // ===================================================
+
+
+        // Cargar datos iniciales
         dispatch(getCartThunk())
         dispatch(getAllProductsThunk())
         localStorage.setItem('home', 'pass')
 
-        // 2. LÓGICA DE KEEP-ALIVE
+        const miuser = localStorage.getItem('token')
+        console.log('el user tiene el token', miuser)
+        // 2. LÓGICA DE KEEP-ALIVE 
         const wakeUpServer = async () => {
             try {
-                // Petición para evitar que el servidor de Render se duerma
+                // Petición para evitar que el servidor de Render se duerma (límite es 15 min).
                 const response = await fetch(`${RENDER_BASE_URL}/api/v1/products`);
                 if (response.ok) {
                     console.log(`[Keep-Alive]: Servidor activo. Última comprobación: ${new Date().toLocaleTimeString()}`);
@@ -78,7 +96,7 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
                 />
               
                 {
-                    // Se utiliza la variable 'products'
+                    // Usa 'products' para filtrar y mapear
                     products?.filter(cbFilter).map(product => (
 
                         <CardProduct

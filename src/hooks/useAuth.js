@@ -3,10 +3,18 @@ import { useNavigate } from "react-router-dom"
 
 
 const useAuth = () => {
+    
+    // 🟢 URL BASE DEL BACKEND DE RENDER
+    // Reemplaza esto si tu URL de Render cambia
+    const RENDER_BASE_URL = 'https://mi-tienda-backend-ewfh.onrender.com'; 
+
     const navigate = useNavigate()
+    
     const createUser = (data, navigate) => {
 
-        const url = '/api/v1/users'
+        // 🟢 Ahora usa la URL completa de Render
+        const url = `${RENDER_BASE_URL}/api/v1/users` 
+        
         axios.post(url, data)
         .then(res => {
             console.log(res.data)
@@ -16,7 +24,10 @@ const useAuth = () => {
     }
 
     const loginUser = data => {
-        const url = '/api/v1/users/login'
+        
+        // 🟢 Ahora usa la URL completa de Render
+        const url = `${RENDER_BASE_URL}/api/v1/users/login`
+        
         axios.post(url, data)
         .then(res => {
             console.log(res.data)
@@ -30,7 +41,7 @@ const useAuth = () => {
         })
     }
     return { createUser, loginUser }
- }
+}
  
 
 export default useAuth
