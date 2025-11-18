@@ -104,14 +104,7 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
                 }
             </div>
 
-            <div className={`mensaje__inicial2 ${entrando ? '' : 'ocultarInicial'} ` }>
-                <h3 className="mensaje_inicial_titulo">Se actualizaron los servidores tanto del backend como la base de datos. Al tratarse de servidores gratuitos, 
-                    entran en modo sleep(dormido) para evitar consumo en los servidores. Se agregó un timer con interval para que envíe una petición cada 14 minutos al
-                    server y así evitar que entre en ese modo. También,  se puso en automático para que se loguera el usuario registrado 
-                    gerardo@gmail.com password 123456  </h3>
-
-                    <button onClick={() => setEntrando(false)} className="button__inicial2">de acuerdo</button>
-            </div>
+           
         </div>
     )
 }
