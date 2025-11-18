@@ -8,34 +8,29 @@ import { getCartThunk } from "../store/slices/cart.slice"
 import useFilterItems from "../utils/useFilterItems"
 import { useEffect } from "react"
 import { getAllProductsThunk } from "../store/slices/products.slice"
-import useAuth from '../hooks/useAuth' // 🟢 Importación necesaria para el login automático
+import useAuth from '../hooks/useAuth'
 
 
 const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
     const dispatch = useDispatch()
-    const { loginUser } = useAuth(); // 🟢 Inicializa el hook para acceder a loginUser
+    const { loginUser } = useAuth(); 
     
-    // 🟢 Obtiene el estado 'products' de Redux
     const products = useSelector(reducer => reducer.products) 
     
-    // URL BASE DE TU BACKEND EN RENDER (Keep-Alive)
+    // URL BASE DE BACKEND EN RENDER 
     const RENDER_BASE_URL = "https://mi-tienda-backend-ewfh.onrender.com"; 
 
 
     useEffect(()=>{
         
-        // ===================================================
-        // 🟢 LÓGICA DE LOGIN AUTOMÁTICO PARA PRUEBAS
-        // ===================================================
+    
         const TEST_CREDENTIALS = {
             email: 'gerardo@gmail.com', 
             password: '123456' 
         };
         
-        //Ejecuta la función de login al cargar. Esto setea el token en localStorage.
         loginUser(TEST_CREDENTIALS);
-        // ===================================================
 
 
         // Cargar datos iniciales
@@ -45,7 +40,7 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
         const miuser = localStorage.getItem('token')
         console.log('el user tiene el token', miuser)
-        // 2. LÓGICA DE KEEP-ALIVE 
+
         const wakeUpServer = async () => {
             try {
                 // Petición para evitar que el servidor de Render se duerma (límite es 15 min).
@@ -105,6 +100,15 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
                         />
                     ))
                 }
+            </div>
+
+            <div className={`mensaje__inicial2 ${entrando ? '' : 'ocultarInicial'} ` }>
+                <h3 className="mensaje_inicial_titulo">Se actualizaron los servidores tanto del backend como la base de datos. Al tratarse de servidores gratuitos, 
+                    entran en modo sleep(dormido) para evitar consumo en los servidores. Se agregó un timer con interval para que envíe una petición cada 14 minutos al
+                    server y así evitar que entre en ese modo. También,  se puso en automático para que se loguera el usuario registrado 
+                    gerardo@gmail.com password 123456  </h3>
+
+                    <button onClick={() => setEntrando(false)} className="button__inicial2">de acuerdo</button>
             </div>
         </div>
     )

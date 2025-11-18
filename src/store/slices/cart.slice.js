@@ -36,9 +36,10 @@ export const getCartThunk = () => dispatch => {
         .then(res => {
 
             dispatch(setCartG(res.data))
+            console.log("recibiendo carrito",res.data)
+
             return res.data
 
-            console.log(res.data)
         })
 
         .catch(err => console.log(err))

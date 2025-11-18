@@ -29,13 +29,11 @@ const CartPage = ({ visible, setVisible }) => {
     // 2. Calcular el subTotal
         const subTotal = quantity * price;
 
-    // 3. 🛑 CORRECCIÓN: Usar una función de precisión para sumar
     // Multiplicamos por 100 para trabajar con centavos (enteros) y luego dividimos por 100
     return (acc * 100 + subTotal * 100) / 100;
     
       }, 0);
 
-  //Close the modal with sweiper**********
 
   const start = e => {
     xStart = e.changedTouches[0].clientX

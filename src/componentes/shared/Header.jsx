@@ -10,14 +10,12 @@ const Header = ({setVisible, visible, setCount, count, visibleA}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
-    //Obtener los productos del carrito del store de Redux
     const cartProducts = useSelector(state => state.cart.products || []);
     
-    //Calcular la cantidad total de artículos
-    const totalItems = cartProducts.reduce((acc, product) => acc + product.productsInCart.quantity, 0);
+    // Calcular la cantidad total de artículos
+    const totalItems = cartProducts.reduce((acc, product) => acc + product.quantity, 0); 
 
     const clickFuera = () => {
-        // Lógica de click fuera si es necesario
     }
 
     const isVisible = ()=>{
@@ -32,7 +30,8 @@ const Header = ({setVisible, visible, setCount, count, visibleA}) => {
     const handleHome = () => {
         dispatch(getAllProductsThunk())
     }
-    const a = document.addEventListener('click', clickFuera) 
+    
+    // Nota: Se eliminó el document.addEventListener
 
     return (
 
