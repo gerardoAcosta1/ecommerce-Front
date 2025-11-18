@@ -2,64 +2,72 @@ import { Link, Navigate, useNavigate } from "react-router-dom"
 import '../styles/Header.css'
 import { useState } from "react"
 import { getCartThunk } from "../../store/slices/cart.slice"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux" 
 import { getAllProductsThunk } from "../../store/slices/products.slice"
 
-const Header = ({setVisible, visible, setCount, count,visibleA}) => {
-const clickFuera = () => {
- 
-}
-const dispatch = useDispatch()
-const navigate = useNavigate()
- const isVisible = ()=>{
+const Header = ({setVisible, visible, setCount, count, visibleA}) => {
+    
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    
+    //Obtener los productos del carrito del store de Redux
+    const cartProducts = useSelector(state => state.cart.products || []);
+    
+    //Calcular la cantidad total de artículos
+    const totalItems = cartProducts.reduce((acc, product) => acc + product.productsInCart.quantity, 0);
 
-  if(localStorage.getItem('token')){
-    setVisible(!visible)
-    setCount(count + 1)
-  }else{
-    navigate('/login')
-  }
+    const clickFuera = () => {
+        // Lógica de click fuera si es necesario
+    }
 
- }
- const handleHome =  ()=> {
- 
-  dispatch(getAllProductsThunk())
- }
-const a = document.addEventListener('click', clickFuera)
-  return (
+    const isVisible = ()=>{
+        if(localStorage.getItem('token')){
+            setVisible(!visible)
+            setCount(count + 1)
+        }else{
+            navigate('/login')
+        }
+    }
+    
+    const handleHome = () => {
+        dispatch(getAllProductsThunk())
+    }
+    const a = document.addEventListener('click', clickFuera) 
 
-    <div  className='fixed'>
-      <nav  className='container__header'>
+    return (
 
-        <div className='logo__header'>
-          <Link to='/'>
-            <strong onClick={handleHome}>e-commerce</strong>
-          </Link>
-        </div>
+        <div className='fixed'>
+            <nav className='container__header'>
 
-        <button className='item__header'>
-          <Link to='/login'>
-            <i class='bx bx-user bx-bg'></i>
-          </Link>
-        </button>
+                <div className='logo__header'>
+                    <Link to='/'>
+                        <strong onClick={handleHome}>e-commerce</strong>
+                    </Link>
+                </div>
 
-        <button className='item__header'>
-          <Link to='/purchases'>
-            <i class='bx bx-window-open bx-bg'></i>
-          </Link>
-        </button>
+                <button className='item__header'>
+                    <Link to='/login'>
+                        <i className='bx bx-user bx-bg'></i>
+                    </Link>
+                </button>
 
-        <button onClick={e => e.stopPropagation()} className='item__header'>
-       
-            <i onClick={isVisible} class='bx bx-cart bx-bg'></i>
-         
-          
+                <button className='item__header'>
+                    <Link to='/purchases'>
+                        <i className='bx bx-window-open bx-bg'></i>
+                    </Link>
+                </button>
+
+                <button onClick={e => e.stopPropagation()} className='item__header'>
+                
+                    <i onClick={isVisible} className='bx bx-cart bx-bg'>
+                        <h3 className="cantidad">{totalItems}</h3>
+                    </i>
+                
+                </button>
+            </nav>
         
-        </button>
-      </nav>
-   
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Header

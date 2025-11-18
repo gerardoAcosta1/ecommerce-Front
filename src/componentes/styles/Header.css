@@ -79,8 +79,21 @@ li {
     border-left: 0.1px solid #c7c7c7;
     background-color: white;
 
-}
+    position: relative;
 
+}
+.cantidad{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    position: absolute;
+    right: 50%;
+    top:20%
+
+
+}
 .bx-user,
 .bx-window-open,
 .bx-cart {
