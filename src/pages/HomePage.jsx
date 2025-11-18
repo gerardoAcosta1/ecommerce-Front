@@ -15,6 +15,8 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
     const dispatch = useDispatch()
     const { loginUser } = useAuth(); 
+
+    const [entrando, setEntrando] =  useState(true)
     
     const products = useSelector(reducer => reducer.products) 
     
