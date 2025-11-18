@@ -6,7 +6,7 @@ import Aside from "../componentes/HomePage/Aside"
 import Search from '../componentes/HomePage/Search'
 import { getCartThunk } from "../store/slices/cart.slice"
 import useFilterItems from "../utils/useFilterItems"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { getAllProductsThunk } from "../store/slices/products.slice"
 import useAuth from '../hooks/useAuth'
 
