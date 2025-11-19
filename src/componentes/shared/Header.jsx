@@ -10,9 +10,10 @@ const Header = ({setVisible, visible, setCount, count, visibleA}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
-    const cartProducts = useSelector(state => state.cart.products || []);
+    const cartProducts = useSelector(state => state.cart.cartItems || []);
     
     // Calcular la cantidad total de artículos
+    console.log('en header,m viendo el valor de cartproduct: ', cartProducts)
     const totalItems = cartProducts.reduce((acc, product) => acc + product.quantity, 0); 
 
     const clickFuera = () => {
