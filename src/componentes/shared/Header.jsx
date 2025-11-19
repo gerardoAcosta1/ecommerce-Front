@@ -59,7 +59,7 @@ const Header = ({setVisible, visible, setCount, count, visibleA}) => {
 
                 <button onClick={e => e.stopPropagation()} className='item__header'>
                 
-                    <i onClick={isVisible} className='bx bx-cart bx-bg'>
+                    <i onClick={isVisible} class='bx bx-cart bx-bg'>
                         <h3 className="cantidad">{totalItems}</h3>
                     </i>
                 
