@@ -4,12 +4,14 @@ import useCartApi from '../../hooks/useCartApi'
 import { getCartThunk } from '../../store/slices/cart.slice'
 import { useDispatch, useSelector } from 'react-redux'
 import imageSrc from '../HomePage/public/image2.png'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 const CardProduct = ({ product }) => {
 
 
     //<!--<img className='image__card' src={product?.images[0].url} alt="" /> <img src={product.images} alt="" />
 
+    const [agregarCarrito, setAgregarCarrito] = useState(false);
+    
 
     const imageUrl = 
         // 1. Asegura que 'images' exista Y que tenga al menos un elemento
@@ -41,7 +43,10 @@ const CardProduct = ({ product }) => {
     const handleAddCart = e => {
 
         e.stopPropagation()
-
+        setAgregarCarrito(true);
+        setTimeout(() => {
+            setAgregarCarrito(false);
+        }, 1000);
         if (localStorage.getItem('token')) {
 
             dispatch(getCartThunk())
@@ -79,9 +84,7 @@ const CardProduct = ({ product }) => {
 
 
             <article onClick={handleNavigate} className='product__card ' >
-                <div className='modal__container'>
-                    <h5 className='modal'></h5>
-                </div>
+                
                 <div className='content__header'>
                     <header className='header__card'>
 
@@ -91,6 +94,10 @@ const CardProduct = ({ product }) => {
                     </header>
                 </div>
                 <section className='information__card'>
+
+                    <div className={`add__carrito ${agregarCarrito ? 'visible' : 'invisible'}`}>
+                        <h3 className='added__carrito'>artículo agregado</h3>   
+                    </div>
                     <h4 className='brand__card'>{product.marca}</h4>
                     <h3 className='title__card'>{product.title}</h3>
                     <article className='about__card'>
