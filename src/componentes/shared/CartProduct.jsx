@@ -65,7 +65,7 @@ const CartProduct = ({ product }) => {
             <div className='section__4__cart'>
                 <h5>X{product.quantity}</h5>
                 <h5 className='total__cart'>Total</h5>
-                <h4 className='price__cart'> ${product?.subtotal}</h4>
+                <h4 className='price__cart'> ${product?.subtotal.toFixed(2)}</h4>
             </div>
          
 
