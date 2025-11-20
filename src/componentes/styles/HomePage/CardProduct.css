@@ -74,13 +74,13 @@
 }
 .add__carrito{
 
-   width: 100%;
+   width: 90%;
     height: 9rem;
-    background-color: rgba(118, 161, 124, 0.815);
+    background-color: rgba(117, 179, 230, 0.815);
     color: white;
     position: absolute;
     
-    border-radius: 2px;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
 }
