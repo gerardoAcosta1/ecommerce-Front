@@ -21,7 +21,15 @@
 
     z-index: 10;
 }
+.button__mensaje {
+    width: 50px;
+    height: 50px;
 
+    margin-left: 40%;
+    background-color: rgb(135, 166, 175);
+    color: white;
+    cursor: pointer;
+}
 .mensaje__flotante {
 
     width: 180px;
@@ -34,7 +42,9 @@
     margin-bottom: 12px;
 
 }
-
+.desaparecer__mensaje {
+    display: none;
+}
 .products__container {
 
     width: 100%;
