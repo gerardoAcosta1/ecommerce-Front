@@ -74,7 +74,11 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
     return (
 
         <div className="main__container">
-
+                <div className="flotante__mensaje">
+                        <h4 className="mensaje__flotante">Debido a que se utiliza un servidor gratuito, este suele apagar la base de datos para ahorrar consumo, si no logra observar 
+                        los productos, por favor espere al menos unos 2 minutos para que el servidor se despierte, ya se envió la petición al server. Gracias por su comprensión.
+                        </h4>
+                </div>
             <Aside
                 setFromTo={setFromTo}
 

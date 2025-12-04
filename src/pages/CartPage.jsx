@@ -8,21 +8,20 @@ import CartProduct from '../componentes/shared/CartProduct'
 import usePurchases from '../hooks/usePurchases'
 
 const CartPage = ({ visible }) => {
-    // 🛑 Nota: Se eliminó 'count' de los props, ya que no se usa aquí.
 
-    // 1. Obtener datos del carrito (ahora es seguro que es un array o undefined/null temporal)
+    //Obtener datos del carrito desde el store
     const cart = useSelector(reducer => reducer.cart)
 
     const { makePurchase, getAllPurchases, purchases } = usePurchases()
     const dispatch = useDispatch()
 
-    // 2. CORRECCIÓN: Se quita 'cart' de las dependencias para evitar el bucle infinito.
+    // Se quita 'cart' de las dependencias para evitar el bucle infinito.
     useEffect(() => {
-        // Usamos dispatch en useEffect para satisfacer las reglas de React Hooks.
+        // Usamos dispatch en useEffect para satisfacer las reglas de reacthooks.
         dispatch(getCartThunk())
     }, [visible, dispatch]) // 'visible' activa la recarga al abrir/cerrar.
 
-    // 3. CORRECCIÓN: El cálculo del total se protege con un array vacío [] si 'cart' es null/undefined.
+    //cálculo del total se protege con un array vacío [] si 'cart' es null/undefined.
     const total = (Array.isArray(cart) ? cart : []).reduce((acc, cv) => {
         // Aseguramos que cv.product existe antes de acceder a price
         const subTotal = cv.quantity * (cv.product?.price || 0)
@@ -31,7 +30,7 @@ const CartPage = ({ visible }) => {
 
 
     const buy = () => {
-        // 🛑 Lógica para ejecutar la compra (POST /purchases)
+        // Lógica para ejecutar la compra (POST /purchases)
         makePurchase()
         console.log(purchases)
         // Se recomienda recargar el carrito y luego las compras, o viceversa.

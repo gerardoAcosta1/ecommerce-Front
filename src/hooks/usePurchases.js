@@ -8,7 +8,7 @@ import { useState } from "react";
 const usePurchases = () => {
     const [purchases, setPurchases] = useState()
 
-    const url = '/api/v1/purchases'
+    const url = 'http://localhost:3001/api/v1/purchases'
 
     const dispatch = useDispatch()
 

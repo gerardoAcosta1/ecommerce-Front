@@ -11,6 +11,7 @@ const CardProduct = ({ product }) => {
     //<!--<img className='image__card' src={product?.images[0].url} alt="" /> <img src={product.images} alt="" />
 
     const [agregarCarrito, setAgregarCarrito] = useState(false);
+    const [sombra, setSombra] = useState(false);
     
 
     const imageUrl = 
@@ -106,7 +107,7 @@ const CardProduct = ({ product }) => {
                         <span className='price__card'>{product.category}</span>
 
                     </article>
-                    <button onClick={handleAddCart} className='button__card'><i class='bx bx-cart-alt bx-md'></i></button>
+                    <button onClick={handleAddCart} className={`button__card ${sombra ? 'sombra__button' : ''}`} onKeyDown={() => setSombra(!sombra)}><i class='bx bx-cart-alt bx-md'></i></button>
                     <box-icon type="solid" color='white' name="cart-alt"></box-icon>
                 </section>
             </article>

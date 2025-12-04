@@ -76,7 +76,7 @@
 
    width: 90%;
     height: 9rem;
-    background-color: rgba(117, 179, 230, 0.815);
+    background-color: rgba(60, 150, 220, 0.9); /* Azul más oscuro */
     color: white;
     position: absolute;
     
@@ -143,8 +143,21 @@
     border: none;
 
     background-color: #f85555;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+.sombra__button{
+    /* Mueve el botón hacia abajo y lo encoge ligeramente */
+    width: 40px;
+    height: 40px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
+.button__card:hover {
+    background-color: #e14e4e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} 
+    /* Opcional: Quita la sombra para simular que se hunde */
 
 .bx-cart-alt {
 
