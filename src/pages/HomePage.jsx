@@ -26,7 +26,7 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
 
     useEffect(()=>{
         
-    
+        
         const TEST_CREDENTIALS = {
             email: 'gerardo@gmail.com', 
             password: '123456' 
@@ -66,8 +66,12 @@ const HomaPage = ({ visibleA, setVisibleA, visible }) => {
         
     }, [dispatch]) 
 
-    console.log(products) 
-
+    useEffect(() => {
+        
+        if(products?.length > 0){
+            setEntrando(false)
+        }
+    }, [products]);
     // FILTRADO SEARCH MAIN
     const {nameValue, inputName, handleFilterName, cbFilter, setFromTo} = useFilterItems()
 
